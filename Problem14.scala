@@ -19,7 +19,7 @@ for (i <- 1 to maxValue if i % 2 != 0) {
     }
 }
 
-if (maxSeed % 2 == 0 && maxSeed * 2 <= maxValue) {
+if (maxSeed * 2 <= maxValue) {
     maxSeed *= 2
     max += 1
 }
