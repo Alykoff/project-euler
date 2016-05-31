@@ -11,17 +11,12 @@ def calcSeq(num: Long, acc: Long = 1): Long = {
 
 var max = 1L
 var maxSeed = 1L
-for (i <- 1 to maxValue if i % 2 != 0) {
+for (i <- 1 to maxValue) {
     val res = calcSeq(i) 
     if (res > max) {
         max = res
         maxSeed = i
     }
-}
-
-while (maxSeed * 2 <= maxValue) {
-    maxSeed *= 2
-    max += 1
 }
 
 println("maxSeed: " +  maxSeed)
