@@ -1,6 +1,6 @@
 import scala.math._
 import scala.annotation.tailrec
-val numOfDivisors = 5
+val numOfDivisors = 500
 
 @tailrec
 def findTriangleWithDivisors(num: Long = 1, nextNatural: Long = 2, numOfDiv: Long): Long = {
@@ -13,10 +13,9 @@ def findTriangleWithDivisors(num: Long = 1, nextNatural: Long = 2, numOfDiv: Lon
 }
 
 def findNumOfDivisors(num: Long): Long = {
-  val root = sqrt(num) 
   @tailrec
   def findNumOfDivisorsHelper(i: Long = 1, acc: Long = 0): Long = {
-    if (i >= root) acc + 1
+    if (i >= num) acc + 1
     else if (num % i == 0) findNumOfDivisorsHelper(i + 1, acc + 1)
     else findNumOfDivisorsHelper(i + 1, acc)
   }
