@@ -2,3 +2,7 @@
 /target
 /build
 *.swp
+.idea
+/out
+*.iml
+*.swo
