@@ -27,14 +27,23 @@ def primes(max: Long, i: Int = 1, acc: List[Long] = List(2L)): List[Long] = {
   else primes(max, i + 2, acc)
 }
 
+// better use this fact:
+// http://mathschallenge.net/index.php?section=faq&ref=number/sum_of_divisors
 def calcSumOfDivisors(n: Long) = {
   if (prms.contains(n)) 1L
   else {
+    val isEven = n % 2 == 0
+    val step =
+      if (isEven) 1L
+      else 2L
     var acc = 1L
-    var i = 2L
-    while (i < n) {
-      if (n % i == 0) acc += i
-      i += 1
+    var i =
+      if (isEven) 2L
+      else 3L
+    val root = math.floor(math.sqrt(n)).toLong
+    while (i <= root) {
+      if (n % i == 0) acc += i + n / i
+      i += step
     }
     acc
   }
@@ -51,4 +60,4 @@ var result = sumsDivs.foldLeft(0L)((sum, x) =>
   else sum
 )
 
-println(result)
+print(result)
