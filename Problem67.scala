@@ -26,7 +26,7 @@ object Problem67 {
       }
       triangle = triangle.updated(i + 1, newNextLayer)
     }
-    println(triangle(triangle.size - 1)(0))
+    println(triangle.last.head)
   }
 }
 
